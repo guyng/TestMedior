@@ -1,0 +1,11 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxFlex="100">
+  <h1>Heroes Management</h1>
+  <h2>My Heroes</h2>
+  <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxFlex="100" class = "ml-16">
+    <hero-card *ngFor = "let hero of myHeroes" [hero] = "hero" fxFlex = "25" class = "px-16"></hero-card>
+  </div>
+  <h2>Others Heroes</h2>
+  <div fxLayout="row wrap" fxLayoutAlign="space-between center" fxFlex="100" class = "ml-16">
+    <hero-card [disableTrain] = "true" *ngFor = "let hero of othersHeroes" [hero] = "hero" fxFlex = "25" class = "px-16"></hero-card>
+  </div>
+</div>

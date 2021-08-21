@@ -1,0 +1,25 @@
+<mat-card *ngIf="hero" class="example-card">
+  <mat-progress-bar color="warn" mode="indeterminate" *ngIf = "heroTrainingLoading">
+  </mat-progress-bar>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{hero.name}}</mat-card-title>
+    <mat-card-subtitle>{{hero.ability === 0 ? 'Attacker' : 'Defender'}}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div fxLayout="column" *ngIf = "!disableTrain">
+      <span *ngIf = "hero.startedTrainDate"> Started Train At: {{hero.startedTrainDate}}</span>
+      <span> Suit Colors: {{hero.suitColors}}</span>
+      <span> Starting Power: {{hero.startingPower}}</span>
+      <span> Current Power: {{hero.currentPower}}</span>
+    </div>
+    <p *ngIf = "disableTrain">
+      Private Data
+    </p>
+
+  </mat-card-content>
+  <mat-card-actions *ngIf = "!disableTrain">
+    <button mat-button (click) = "trainHero(hero.id)">Train</button>
+  </mat-card-actions>
+</mat-card>
