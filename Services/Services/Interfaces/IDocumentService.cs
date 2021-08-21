@@ -7,7 +7,7 @@ namespace BL.Services.Interfaces
 {
 	public interface IDocumentService
 	{
-		Task<> GetDocuments();
+		//Task<> GetDocuments();
 		Task AddDocument();
 		Task UpdateDocument();
 		Task DeleteDocument();
